@@ -31,8 +31,8 @@ export const LineItemsSection: React.FC = () => {
   const total = proposalData.lineItems.reduce((sum, item) => sum + item.amount, 0);
   
   return (
-    <div className="mb-8 bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-      <div className="bg-gradient-to-r from-gray-50 to-white border-b border-gray-100 p-4">
+    <div className="mb-6 bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+      <div className="border-b border-gray-100 p-4">
         <div className="flex justify-between items-center">
           <h2 className="text-lg font-semibold text-gray-800">Cost Breakdown</h2>
         </div>
@@ -41,7 +41,39 @@ export const LineItemsSection: React.FC = () => {
         </p>
       </div>
       
+      
       <div className="p-4">
+      <div className="flex gap-3 mb-4">
+          <Input
+            placeholder="Description"
+            value={newItemDesc}
+            onChange={(e) => setNewItemDesc(e.target.value)}
+            onKeyPress={handleKeyPress}
+            className="flex-1 bg-gray-50 focus:bg-white transition-colors duration-200"
+          />
+          <Input
+            placeholder="Amount"
+            value={newItemAmount}
+            onChange={(e) => setNewItemAmount(e.target.value)}
+            onKeyPress={handleKeyPress}
+            type="number"
+            min="0"
+            step="0.01"
+            prefixIcon={<DollarSign size={16} className="text-gray-500" />}
+            className="w-32 bg-gray-50 focus:bg-white transition-colors duration-200"
+          />
+        </div>
+        
+        <Button
+          onClick={handleAddItem}
+          variant="outline"
+          fullWidth
+          className="mb-6"
+          title="Add New Item"
+        >
+          {/* <Plus size={16} className="mr-2" /> */}
+          {/* <span>Add Item</span> */}
+        </Button>
         {proposalData.lineItems.length > 0 && (
           <div className="mb-6 divide-y divide-gray-100">
             {proposalData.lineItems.map((item) => (
@@ -60,42 +92,11 @@ export const LineItemsSection: React.FC = () => {
             ))}
           </div>
         )}
-        
-        <div className="flex gap-3 mb-4">
-          <Input
-            placeholder="Description"
-            value={newItemDesc}
-            onChange={(e) => setNewItemDesc(e.target.value)}
-            onKeyPress={handleKeyPress}
-            className="flex-1 bg-gray-50 focus:bg-white transition-colors duration-200"
-          />
-          <Input
-            placeholder="Amount"
-            value={newItemAmount}
-            onChange={(e) => setNewItemAmount(e.target.value)}
-            onKeyPress={handleKeyPress}
-            type="number"
-            min="0"
-            step="0.01"
-            prefix={<DollarSign size={16} className="text-gray-500" />}
-            className="w-32 bg-gray-50 focus:bg-white transition-colors duration-200"
-          />
-        </div>
-        
-        <Button
-          onClick={handleAddItem}
-          variant="outline"
-          fullWidth
-          className="mb-6"
-        >
-          <Plus size={16} className="mr-2" />
-          <span>Add Item</span>
-        </Button>
 
         <div className="bg-gray-50 rounded-lg p-4">
           <div className="flex justify-between items-center">
             <span className="font-medium text-gray-700">Total</span>
-            <span className="text-xl font-semibold text-blue-600">${total.toFixed(2)}</span>
+            <span className="text-xl font-semibold text-gray-900">${total.toFixed(2)}</span>
           </div>
         </div>
       </div>

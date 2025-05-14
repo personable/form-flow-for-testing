@@ -88,7 +88,7 @@ export const ProposalPreview: React.FC<ProposalPreviewProps> = ({ onBack }) => {
         onBack={onBack}
       />
       
-      <div className="max-w-4xl mx-auto p-8">
+      <div className=" mx-auto p-8">
         <div className="bg-white shadow-xl rounded-xl overflow-hidden">
           <div className="p-8 space-y-12">
             {/* Header Section */}
@@ -166,7 +166,7 @@ export const ProposalPreview: React.FC<ProposalPreviewProps> = ({ onBack }) => {
                             type="number"
                             value={item.amount}
                             onChange={(e) => handleAmountChange(item.id, e.target.value)}
-                            prefix={<DollarSign size={16} className="text-gray-500" />}
+                            prefixIcon={<DollarSign size={16} className="text-gray-500" />}
                             className="w-32 text-right ml-auto"
                           />
                         </td>
@@ -189,7 +189,7 @@ export const ProposalPreview: React.FC<ProposalPreviewProps> = ({ onBack }) => {
                             value={newItemAmount}
                             onChange={(e) => setNewItemAmount(e.target.value)}
                             onKeyPress={handleKeyPress}
-                            prefix={<DollarSign size={16} className="text-gray-500" />}
+                            prefixIcon={<DollarSign size={16} className="text-gray-500" />}
                             className="w-32 text-right"
                           />
                           <button

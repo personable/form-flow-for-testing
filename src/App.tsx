@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-100">
       <ProposalProvider>
-        <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className="mx-auto lg overflow-hidden" style={{maxWidth: 600}}>
           <ProposalForm />
         </div>
       </ProposalProvider>

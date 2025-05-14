@@ -13,8 +13,8 @@ import { Button } from './ui/Button';
 const sections = [
   { id: 'customerInfo', component: CustomerInfoSection, title: 'Customer Information' },
   { id: 'scope', component: ScopeOfWorkSection, title: 'Scope of Work' },
-  { id: 'lineItems', component: LineItemsSection, title: 'Cost Breakdown' },
   { id: 'timeframe', component: TimeframeSection, title: 'Timeframe' },
+  { id: 'lineItems', component: LineItemsSection, title: 'Cost Breakdown' },
   { id: 'downPayment', component: DownPaymentSection, title: 'Down Payment' },
   { id: 'terms', component: TermsSection, title: 'Terms & Conditions' },
 ];
@@ -28,7 +28,7 @@ export const ProposalForm: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100">
+    <div className="flex flex-col min-h-screen">
       <Header
         title={proposalData.customerAddress.street}
         subtitle={`Proposal ${proposalData.proposalNumber}`}
@@ -36,13 +36,13 @@ export const ProposalForm: React.FC = () => {
       
       <div className="flex-1 overflow-auto">
         {sections.map((Section) => (
-          <div key={Section.id} className="p-4">
+          <div key={Section.id} className="">
             <Section.component />
           </div>
         ))}
       </div>
 
-      <div className="p-4 bg-white border-t border-gray-200">
+      <div className="pb-8">
         <Button
           onClick={() => setShowPreview(true)}
           title="Create Proposal"

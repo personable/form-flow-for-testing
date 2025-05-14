@@ -48,8 +48,9 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({ onImageUpload, disable
         onClick={handleClick}
         disabled={disabled || isUploading}
         className={`
-          p-2 rounded-md text-gray-500 hover:bg-gray-100
+          p-2 rounded-md text-gray-800 hover:bg-gray-100
           transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500
+          text-xs flex items-center gap-2 text-gray-700
         `}
       >
         {isUploading ? (
@@ -59,6 +60,7 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({ onImageUpload, disable
         ) : (
           <Camera size={20} />
         )}
+        Add Photos
       </button>
     </div>
   );

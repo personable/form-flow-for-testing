@@ -23,8 +23,8 @@ export const CustomerInfoSection: React.FC = () => {
   };
 
   return (
-    <div className="mb-6">
-      <h2 className="text-lg font-medium text-gray-700 mb-4">Customer Information</h2>
+    <div className="mb-6 mt-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+      <h2 className="text-lg font-bold text-gray-700 mb-4">Customer Information</h2>
       
       <div className="space-y-4">
         <div>
@@ -32,7 +32,7 @@ export const CustomerInfoSection: React.FC = () => {
             <h3 className="text-sm font-medium text-gray-600">Address</h3>
             <button
               onClick={() => setEditingAddress(!editingAddress)}
-              className="text-blue-500 hover:text-blue-700 p-1"
+              className="text-blue-700 hover:text-blue-700 p-1"
             >
               <Pencil size={16} />
             </button>
@@ -63,7 +63,7 @@ export const CustomerInfoSection: React.FC = () => {
                     onChange={(e) => setAddressData({ ...addressData, zip: e.target.value })}
                   />
                 </div>
-                <Button onClick={handleSaveAddress} fullWidth>Save Address</Button>
+                <Button onClick={handleSaveAddress} fullWidth title="Save Address" />
               </div>
             ) : (
               <>
@@ -71,7 +71,7 @@ export const CustomerInfoSection: React.FC = () => {
                 <p className="text-gray-800">
                   {proposalData.customerAddress.city}, {proposalData.customerAddress.state} {proposalData.customerAddress.zip}
                 </p>
-                <div className="flex items-center mt-2 text-sm text-blue-500">
+                <div className="flex items-center mt-2 text-sm text-gray-500">
                   <MapPin size={14} className="mr-1" />
                   <span>Found in Project Location</span>
                 </div>
@@ -85,7 +85,7 @@ export const CustomerInfoSection: React.FC = () => {
             <h3 className="text-sm font-medium text-gray-600">Contact</h3>
             <button
               onClick={() => setEditingContact(!editingContact)}
-              className="text-blue-500 hover:text-blue-700 p-1"
+              className="text-blue-700 hover:text-blue-700 p-1"
             >
               <Pencil size={16} />
             </button>
@@ -110,14 +110,14 @@ export const CustomerInfoSection: React.FC = () => {
                   value={contactData.email}
                   onChange={(e) => setContactData({ ...contactData, email: e.target.value })}
                 />
-                <Button onClick={handleSaveContact} fullWidth>Save Contact</Button>
+                <Button onClick={handleSaveContact} fullWidth title="Save Contact" className="p2" />
               </div>
             ) : (
               <>
                 <p className="text-gray-800 font-medium">{proposalData.customerContact.name}</p>
                 <p className="text-gray-800">{proposalData.customerContact.phone}</p>
                 <p className="text-gray-800">{proposalData.customerContact.email}</p>
-                <div className="flex items-center mt-2 text-sm text-blue-500">
+                <div className="flex items-center mt-2 text-sm text-gray-500">
                   <MapPin size={14} className="mr-1" />
                   <span>Found in Project Contact</span>
                 </div>

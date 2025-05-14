@@ -30,8 +30,8 @@ export const TimeframeSection: React.FC = () => {
   };
   
   return (
-    <div className="mb-8 bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-      <div className="bg-gradient-to-r from-gray-50 to-white border-b border-gray-100 p-4">
+    <div className="mb-6 bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+      <div className="border-b border-gray-100 p-4">
         <div className="flex justify-between items-center">
           <h2 className="text-lg font-semibold text-gray-800">Timeframe</h2>
           <VoiceInput 
@@ -42,8 +42,8 @@ export const TimeframeSection: React.FC = () => {
         </div>
         <p className="text-sm text-gray-500 mt-1">
           {isRecording 
-            ? "Speaking... Click the microphone again to stop."
-            : "Describe how long this job will take. Click the microphone to start recording."}
+            ? "Listening..."
+            : "Describe how long this job will take. Talk or type."}
         </p>
       </div>
       
@@ -51,13 +51,12 @@ export const TimeframeSection: React.FC = () => {
         <TextArea
           value={proposalData.timeframe}
           onChange={handleTextChange}
-          placeholder="Enter project timeframe..."
+          placeholder="This work should take about three days. If the weather is bad, we'll have to pause, and it'll take longer."
           rows={4}
           className="mb-4 bg-gray-50 focus:bg-white transition-colors duration-200"
         />
-        
         <div className="flex items-center gap-3">
-          <ImageUpload onImageUpload={handleImageUpload} />
+          
           
           {proposalData.timeframeImages.length > 0 && (
             <div className="flex gap-3 overflow-x-auto py-2">
@@ -77,6 +76,7 @@ export const TimeframeSection: React.FC = () => {
               ))}
             </div>
           )}
+          <ImageUpload onImageUpload={handleImageUpload} />
         </div>
       </div>
 

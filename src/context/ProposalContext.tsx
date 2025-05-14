@@ -49,15 +49,15 @@ type ProposalContextType = {
 const defaultProposalData: ProposalData = {
   proposalNumber: '#123',
   customerAddress: {
-    street: '37 Rosemont Ave.',
+    street: '12 Main St.',
     city: 'Portland',
     state: 'ME',
     zip: '04103',
   },
   customerContact: {
-    name: 'Jane Doe',
-    phone: '(207) 272-4567',
-    email: 'jane.doe.1989@gmail.com',
+    name: 'Jane Stevens',
+    phone: '(555) 555-5555',
+    email: 'j-stevens1986@hotmail.com',
   },
   scopeOfWork: '',
   scopeImages: [],

@@ -87,7 +87,7 @@ export const PaymentForm: React.FC<PaymentFormProps> = ({ onBack }) => {
                 onChange={(e) => setCardNumber(formatCardNumber(e.target.value))}
                 maxLength={19}
                 placeholder="1234 5678 9012 3456"
-                prefix={<CreditCard className="text-gray-400" size={20} />}
+                prefixIcon={<CreditCard className="text-gray-400" size={20} />}
                 required
               />
             </div>
@@ -99,7 +99,7 @@ export const PaymentForm: React.FC<PaymentFormProps> = ({ onBack }) => {
                 onChange={(e) => setExpiry(formatExpiry(e.target.value))}
                 maxLength={5}
                 placeholder="MM/YY"
-                prefix={<Calendar className="text-gray-400" size={20} />}
+                prefixIcon={<Calendar className="text-gray-400" size={20} />}
                 required
               />
               <Input
@@ -108,7 +108,7 @@ export const PaymentForm: React.FC<PaymentFormProps> = ({ onBack }) => {
                 onChange={(e) => setCvc(e.target.value.replace(/\D/g, ''))}
                 maxLength={4}
                 placeholder="123"
-                prefix={<Lock className="text-gray-400" size={20} />}
+                prefixIcon={<Lock className="text-gray-400" size={20} />}
                 required
               />
             </div>

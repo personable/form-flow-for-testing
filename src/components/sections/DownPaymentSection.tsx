@@ -44,13 +44,13 @@ export const DownPaymentSection: React.FC = () => {
   }, [proposalData.downPayment.percentage, proposalData.total]);
   
   return (
-    <div className="mb-6 border border-dashed border-gray-300 rounded-lg p-4">
-      <h2 className="text-lg font-medium text-gray-700 mb-4">Down Payment</h2>
+    <div className="mb-6 p-4 bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+      <h2 className="text-lg font-bold text-gray-800 mb-4">Payment</h2>
       
       <div className="space-y-4">
         <div>
           <div className="flex items-center justify-between mb-1">
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-gray-700 mr-4">
               Percentage
             </label>
             <Input
@@ -60,8 +60,8 @@ export const DownPaymentSection: React.FC = () => {
               step="5"
               value={proposalData.downPayment.percentage}
               onChange={handlePercentageInput}
-              className="w-24 text-right"
-              suffix="%"
+              className="w-24 bg-gray-50 text-right"
+              suffixIcon="%"
             />
           </div>
           <input
@@ -85,7 +85,8 @@ export const DownPaymentSection: React.FC = () => {
             step="0.01"
             value={proposalData.downPayment.amount || ''}
             onChange={handleAmountChange}
-            prefix={<DollarSign size={18} className="text-gray-500" />}
+            className="bg-gray-50"
+            prefixIcon={<DollarSign size={18} className="text-gray-500 mr-4" />}
           />
         </div>
       </div>

@@ -30,8 +30,8 @@ export const ScopeOfWorkSection: React.FC = () => {
   };
   
   return (
-    <div className="mb-8 bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-      <div className="bg-gradient-to-r from-gray-50 to-white border-b border-gray-100 p-4">
+    <div className="mb-6 bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+      <div className="border-b border-gray-100 p-4">
         <div className="flex justify-between items-center">
           <h2 className="text-lg font-semibold text-gray-800">Scope of Work</h2>
           <VoiceInput 
@@ -42,8 +42,8 @@ export const ScopeOfWorkSection: React.FC = () => {
         </div>
         <p className="text-sm text-gray-500 mt-1">
           {isRecording 
-            ? "Speaking... Click the microphone again to stop."
-            : "Describe the work you're planning. Click the microphone to start recording."}
+            ? "Listening..."
+            : "Walk us through the work you're planning. Talk or type."}
         </p>
       </div>
       
@@ -51,14 +51,12 @@ export const ScopeOfWorkSection: React.FC = () => {
         <TextArea
           value={proposalData.scopeOfWork}
           onChange={handleTextChange}
-          placeholder="Enter scope of work..."
+          placeholder="We're doing this work for Jane Stevens at 12 Main Street in Portland, Maine, 04103. Her email is j-stevens1986 at hotmail. Her number is 555-555-5555."
           rows={4}
           className="mb-4 bg-gray-50 focus:bg-white transition-colors duration-200"
         />
         
         <div className="flex items-center gap-3">
-          <ImageUpload onImageUpload={handleImageUpload} />
-          
           {proposalData.scopeImages.length > 0 && (
             <div className="flex gap-3 overflow-x-auto py-2">
               {proposalData.scopeImages.map((image, index) => (
@@ -77,6 +75,7 @@ export const ScopeOfWorkSection: React.FC = () => {
               ))}
             </div>
           )}
+                    <ImageUpload onImageUpload={handleImageUpload} />
         </div>
       </div>
 

@@ -28,7 +28,7 @@ export const TotalSection: React.FC = () => {
         step="0.01"
         value={proposalData.total || ''}
         onChange={handleTotalChange}
-        prefix={<DollarSign size={18} className="text-gray-500" />}
+        prefixIcon={<DollarSign size={18} className="text-gray-500" />}
         className="mt-2"
       />
     </div>

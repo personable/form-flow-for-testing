@@ -158,7 +158,7 @@ export const VoiceInput: React.FC<VoiceInputProps> = ({
         disabled={disabled}
         className={`
           p-2 rounded-full transition-all duration-200
-          ${isListening ? 'bg-red-50 text-red-500' : 'bg-blue-50 text-blue-500 hover:bg-blue-100'}
+          ${isListening ? 'bg-red-700 text-white' : 'bg-blue-700 text-white hover:bg-blue-800'}
           focus:outline-none focus:ring-2 focus:ring-blue-500
           ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
         `}

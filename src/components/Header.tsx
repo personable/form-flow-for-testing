@@ -9,7 +9,7 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ title, subtitle, onBack }) => {
   return (
-    <div className="bg-gray-200 p-3 relative">
+    <div className="pt-4 relative">
       {onBack && (
         <button
           onClick={onBack}
@@ -19,7 +19,7 @@ export const Header: React.FC<HeaderProps> = ({ title, subtitle, onBack }) => {
         </button>
       )}
       <div className="text-center">
-        <h1 className="text-lg font-medium">{title}</h1>
+        <h1 className="text-lg font-bold">{title}</h1>
         <p className="text-sm font-medium text-gray-700">{subtitle}</p>
       </div>
     </div>
