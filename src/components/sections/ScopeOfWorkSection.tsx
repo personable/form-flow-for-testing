@@ -51,7 +51,7 @@ export const ScopeOfWorkSection: React.FC = () => {
         <TextArea
           value={proposalData.scopeOfWork}
           onChange={handleTextChange}
-          placeholder="We're doing this work for Jane Stevens at 12 Main Street in Portland, Maine, 04103. Her email is j-stevens1986 at hotmail. Her number is 555-555-5555."
+          placeholder="We're installing 10 Richards builder-grade windows to code, removing the old window weights, and stuffing the cavities. We'll wrap the exterior casings with custom-fit aluminum. Finally, we'll clean up and haul away the old windows."
           rows={4}
           className="mb-4 bg-gray-50 focus:bg-white transition-colors duration-200"
         />
